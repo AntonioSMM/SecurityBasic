@@ -1,12 +1,13 @@
 package com.securityJWT.JWT.services;
 
+import com.securityJWT.JWT.dto.AuthenticationRequest;
 import com.securityJWT.JWT.entity.UserEntity;
 import com.securityJWT.JWT.repository.UserRepo;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.stereotype.Service;
-import dto.AuthenticationRequest;
 import dto.AuthenticationResponse;
 
 import java.util.HashMap;
@@ -25,7 +26,7 @@ public class AuthenticationService {
     @Autowired
     private JwtService jwtService;
 
-    public AuthenticationResponse login(AuthenticationRequest authRequest) {
+    public AuthenticationResponse login(@Valid AuthenticationRequest authRequest) {
 
         UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(
                                                     authRequest.getUsername(), authRequest.getPassword());

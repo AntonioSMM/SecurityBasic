@@ -1,7 +1,7 @@
 package com.securityJWT.JWT.controller;
 
+import com.securityJWT.JWT.dto.AuthenticationRequest;
 import com.securityJWT.JWT.services.AuthenticationService;
-import dto.AuthenticationRequest;
 import dto.AuthenticationResponse;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

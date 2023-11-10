@@ -17,7 +17,7 @@ public class JwtService {
 
 
     private long expiration_minutes = 30;
-    private String secretKey = "clave segura 12344";
+    private String secretKey = "clave segura 12344_$$ otra mas segura si si..";
 
 
     public String generateToken(UserEntity user, Map<String, Object> extraClaims) {
@@ -43,9 +43,10 @@ public class JwtService {
 
 
 
-    //general la firma, basada en una secret key definida al inicio
+    //general la firma, basada en una variable llamada secretKey que establecimos al inicio, o puede estar en el app.properties
     private SecretKey generateKey() {
 
+        //para generar la llave necesita un parametro en bytes, por eso el getBytes
         return Keys.hmacShaKeyFor(secretKey.getBytes());
     }
 }

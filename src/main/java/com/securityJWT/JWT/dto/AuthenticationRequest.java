@@ -1,4 +1,4 @@
-package dto;
+package com.securityJWT.JWT.dto;
 
 public class AuthenticationRequest {
 
